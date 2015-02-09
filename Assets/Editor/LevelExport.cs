@@ -166,4 +166,39 @@ public class LevelExport : EditorWindow
 		}
 		return true;
 	}
+
+	private void ShowErrorForNull(string gameObjectName)
+	{
+		EditorUtility.DisplayDialog("Error", "Cannot find gameobject " + gameObjectName, "OK");
+	}
+	
+	private bool InputIsValid()
+	{
+		if (MinCarrotSpawnTime > MaxCarrotSpawnTime)
+		{
+			EditorUtility.DisplayDialog("Error", "MinCarrotSpawnTime must be less or equal "
+			                            + " to MaxCarrotSpawnTime", "OK");
+			return false;
+		}
+		
+		if (rounds.Count == 0)
+		{
+			EditorUtility.DisplayDialog("Error", "You cannot have 0 rounds", "OK");
+			return false;
+		}
+		
+		if (waypointsCount == 0)
+		{
+			EditorUtility.DisplayDialog("Error", "You cannot have 0 waypoints", "OK");
+			return false;
+		}
+		
+		if (pathsCount == 0)
+		{
+			EditorUtility.DisplayDialog("Error", "You cannot have 0 paths", "OK");
+			return false;
+		}
+		
+		return true;
+	}
 }
