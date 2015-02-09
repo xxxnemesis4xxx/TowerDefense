@@ -17,7 +17,7 @@ namespace Assets.Scripts
 		public LevelStuffFromXML()
 		{
 			Paths = new List<Vector2> ();
-			Waypoints = new List<Vector1> ();
+			Waypoints = new List<Vector2> ();
 			Rounds = new List<Round> ();
 		}
 	}
